@@ -7,7 +7,8 @@ run:
 	DB_HOST=localhost mvn spring-boot:run
 
 docker-build:
-	docker build -t roboshop-shipping .
+	docker build -t nareshroboshop.azurecr.io/roboshop-shipping .
+	docker push nareshroboshop.azurecr.io/roboshop-shipping
 
 db-init:
 	mysql -h $${MYSQL_HOST:-localhost} -u root -pRoboShop@1 < db/app-user.sql
