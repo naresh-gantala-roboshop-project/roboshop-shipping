@@ -1,7 +1,7 @@
 FROM alpine:3.19
 
 # Install mysql-client, curl, and unzip
-RUN apk add --no-cache mysql-client curl unzip bash
+RUN apk add --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/v3.19/community/ mysql-client curl unzip bash
 
 WORKDIR /schema
 
