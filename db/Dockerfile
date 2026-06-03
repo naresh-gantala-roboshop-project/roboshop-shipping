@@ -1,4 +1,4 @@
-FROM alpine:3.19
+FROM debian:bookworm-slim
 
 # Install the actual Oracle mysql-client, curl, and unzip
 RUN apt-get update && apt-get install -y --no-install-recommends \
