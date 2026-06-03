@@ -1,4 +1,5 @@
 #!/bin/bash
+MYSQL_HOST="${DB_HOST}"
 
 # Ensure required environment variables are passed
 if [ -z "$MYSQL_HOST" ] || [ -z "$MYSQL_USER" ] || [ -z "$MYSQL_PASSWORD" ]; then
@@ -6,7 +7,7 @@ if [ -z "$MYSQL_HOST" ] || [ -z "$MYSQL_USER" ] || [ -z "$MYSQL_PASSWORD" ]; the
     exit 1
 fi
 
-MYSQL_HOST="${DB_HOST}"
+
 
 echo "Connecting to MySQL host: ${MYSQL_HOST}..."
 
