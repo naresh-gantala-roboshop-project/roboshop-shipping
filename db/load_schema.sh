@@ -11,10 +11,10 @@ echo "Connecting to MySQL host: ${MYSQL_HOST}..."
 # 1. Initialize schema and database using root/admin privileges
 # Note: If your structural ConfigMap uses an app-specific user, 
 # make sure this Job overrides it with a user that has permission to CREATE databases/users.
-mysql -h "${MYSQL_HOST}" -u "${MYSQL_USER}" -p"${MYSQL_PASSWORD}" < db/schema.sql
+mysql -h "${MYSQL_HOST}" -u "${MYSQL_USER}" -p"${MYSQL_PASSWORD}" < /schema/schema.sql
 if [ $? -ne 0 ]; then echo "Failed to load schema.sql"; exit 1; fi
 
-mysql -h "${MYSQL_HOST}" -u "${MYSQL_USER}" -p"${MYSQL_PASSWORD}" < db/app-user.sql
+mysql -h "${MYSQL_HOST}" -u "${MYSQL_USER}" -p"${MYSQL_PASSWORD}" < /schema/app-user.sql
 if [ $? -ne 0 ]; then echo "Failed to load app-user.sql"; exit 1; fi
 
 
