@@ -6,6 +6,8 @@ if [ -z "$MYSQL_HOST" ] || [ -z "$MYSQL_USER" ] || [ -z "$MYSQL_PASSWORD" ]; the
     exit 1
 fi
 
+MYSQL_HOST="${DB_HOST}"
+
 echo "Connecting to MySQL host: ${MYSQL_HOST}..."
 
 # 1. Initialize schema and database using root/admin privileges
