@@ -1,6 +1,7 @@
 #!/bin/bash
 MYSQL_HOST="${DB_HOST}"
 MYSQL_USER="${DB_USER}"
+MYSQL_PASSWORD="${MYSQL_ROOT_PASSWORD}"
 # Ensure required environment variables are passed
 if [ -z "$MYSQL_HOST" ] || [ -z "$MYSQL_USER" ] || [ -z "$MYSQL_PASSWORD" ]; then
     echo "ERROR: MYSQL_HOST, MYSQL_USER, and MYSQL_PASSWORD must be set."
