@@ -1,12 +1,5 @@
-FROM debian:bookworm-slim
+FROM docker.io/mysql:8.0
 
-# Install the actual Oracle mysql-client, curl, and unzip
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    default-mysql-client \
-    curl \
-    unzip \
-    bash \
-    && rm -rf /var/lib/apt/lists/*
 WORKDIR /schema
 
 # Download and extract the database artifacts
