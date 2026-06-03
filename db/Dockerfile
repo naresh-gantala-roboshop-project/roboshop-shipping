@@ -1,8 +1,12 @@
 FROM alpine:3.19
 
-# Install mysql-client, curl, and unzip
-RUN apk add --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/v3.19/community/ mysql-client curl unzip bash
-
+# Install the actual Oracle mysql-client, curl, and unzip
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    default-mysql-client \
+    curl \
+    unzip \
+    bash \
+    && rm -rf /var/lib/apt/lists/*
 WORKDIR /schema
 
 # Download and extract the database artifacts
